@@ -1,7 +1,6 @@
 public class Archer extends Player{
     public Archer(String name) {
-        super(name);
-        className = "Archer";
+        super(name, "Archer");
     }
 
     @Override

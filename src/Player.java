@@ -5,13 +5,14 @@ public abstract class Player {
     private int health;
     private int mana;
     private int level;
-    protected String className = "";
+    private final String className;
 
-    public Player(String name){
+    public Player(String name, String className){
         this.name = name;
         this.health = 100;
         this.mana = 100;
         this.level = 1;
+        this.className = className;
     }
     public abstract void attack();
 
