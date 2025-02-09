@@ -1,11 +1,14 @@
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
-public abstract class Player {
+public abstract class Player implements Comparable<Player> {
     private final String name;
     private int health;
     private int mana;
     private int level;
     private final String className;
+    private static ArrayList<Player> players = new ArrayList<>(); // M2 HOMEWORK STATIC
 
     public Player(String name, String className){
         this.name = name;
@@ -13,6 +16,7 @@ public abstract class Player {
         this.mana = 100;
         this.level = 1;
         this.className = className;
+        players.add(this);
     }
     public abstract void attack();
 
@@ -40,6 +44,17 @@ public abstract class Player {
         return true;
     }
 
+    // M2 HOMEWORK STATIC
+    public static void leaderboard(){
+        Collections.sort(players);
+        players.forEach(System.out::println);
+    }
+    @Override
+    public int compareTo(Player otherPlayer){
+        if(otherPlayer == null || this.level > otherPlayer.level) return -1;
+        return this.level < otherPlayer.level ? 1 : name.compareTo(otherPlayer.name);
+    }
+
     @Override
     public boolean equals(Object otherObject){
         if(this == otherObject) return true;
@@ -55,18 +70,5 @@ public abstract class Player {
     public String toString(){
         return "Name: "+ this.name + " Level:" + this.level + " Class:" + className;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
