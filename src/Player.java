@@ -45,7 +45,7 @@ public abstract class Player implements Comparable<Player> {
     }
 
     // M2 HOMEWORK STATIC
-    public static void leaderboard(){
+    public static void getLeaderboard(){
         Collections.sort(players);
         players.forEach(System.out::println);
     }

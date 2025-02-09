@@ -17,7 +17,7 @@ public class Main {
         Player player8 = PlayerFactory.createPlayer("Thief", "Ghost");
 
         System.out.println("Testing Leaderboard sorting based only on name: ");
-        Player.leaderboard();
+        Player.getLeaderboard();
 
         player1.setLevel(10);
         player2.setLevel(10);
@@ -29,7 +29,7 @@ public class Main {
         player8.setLevel(12);
 
         System.out.println("\nTesting Leaderboard sorting based on both level and name: ");
-        Player.leaderboard();
+        Player.getLeaderboard();
 
 //        Homework 1 Tests
 //        ArrayList<Player> party = new ArrayList<>();
