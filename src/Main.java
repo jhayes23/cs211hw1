@@ -14,13 +14,16 @@ public class Main {
         // M3 USING COMPARATOR
         ArrayList<Player> party = new ArrayList<>();
         Collections.addAll(party, player1, player2, player3, player4);
+        System.out.println("Class comparator pre sort:");
+        party.forEach(System.out::println);
+        System.out.println();
         party.sort(Player.JOB_COMPARATOR);
-        System.out.println("Job comparator testing.");
+        System.out.println("Class comparator post sort:");
         party.forEach(System.out::println);
 
 
         System.out.println("\n\n\n");
-        System.out.println("Choose a class by entering a number 1 - 4.");
+        System.out.println("Pick a class by entering a number 1 - 4.");
         System.out.println("Warrior: 1\t Archer: 2\t Mage: 3\t Thief: 4");
         while (true) {
             if (sc.hasNextInt()) {
