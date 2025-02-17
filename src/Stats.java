@@ -35,7 +35,6 @@ public class Stats {
 
     public Stats(int level) {
         level = Math.max(level, 1);
-        // M3 HOMEWORK ENUM USE
         stats = new EnumMap<>(StatType.class);
         stats.put(StatType.STRENGTH, 10);
         stats.put(StatType.DEXTERITY, 10);
