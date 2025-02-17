@@ -1,7 +1,7 @@
 public class Monster {
     private int hp;
-    private int power;
-    private String name;
+    private final int power;
+    private final String name;
     private boolean dead;
 
     public Monster(String name){
@@ -22,7 +22,7 @@ public class Monster {
     }
     public String getName(){return this.name;}
 
-    public boolean isDead(){return dead;}
+    public boolean isAlive(){return !dead;}
     @Override
     public String toString(){ return name + "  HP: " + hp;}
 }

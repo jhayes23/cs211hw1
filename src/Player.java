@@ -45,13 +45,11 @@ public abstract class Player implements Comparable<Player> {
         return true;
     }
 
-    public boolean takeDmg(int dmgTaken){
+    public void takeDmg(int dmgTaken){
         this.health -= dmgTaken;
-        if (health <0){
+        if (health <=0){
             dead = !dead;
-            return true;
         }
-        return false;
     }
     public void levelUp(){
         level++;
@@ -75,7 +73,7 @@ public abstract class Player implements Comparable<Player> {
         this.mana = number;
         return true;
     }
-    public boolean isDead(){return dead;}
+    public boolean isAlive(){return !dead;}
     public void drinkHpPotion(int recoveryAmt){this.health +=recoveryAmt; }
 
     // M2 HOMEWORK STATIC

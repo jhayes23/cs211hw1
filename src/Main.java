@@ -46,7 +46,7 @@ public class Main {
         System.out.println("A wild boar spawned from thin air! Prepare for battle!");
         Monster wildBoar = new Monster("Wild Boar");
 
-        while (!user.isDead() && !wildBoar.isDead()) {
+        while (user.isAlive() && wildBoar.isAlive()) {
             System.out.println(user.battleInfo());
             System.out.println(wildBoar);
 
@@ -70,12 +70,12 @@ public class Main {
                 user.drinkHpPotion(25);
             }
 
-            if (!wildBoar.isDead()) {
+            if (wildBoar.isAlive()) {
                 wildBoar.attack(user);
             }
         }
 
-        if (!user.isDead()) {
+        if (user.isAlive()) {
             System.out.println("You defeated the Wild Boar!");
         } else {
             System.out.println("You have died in battle. :(");
