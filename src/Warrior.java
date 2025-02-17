@@ -1,11 +1,13 @@
 public class Warrior extends Player{
     public Warrior(String name) {
-        super(name, "Warrior");
+        super(name, CLASSES.WARRIOR);
     }
 
     @Override
-    public void attack() {
-        System.out.println(getName() + " swings their sword toward the enemy.");
+    public void attack(Monster monster) {
+        System.out.print(getName() + " swings their sword toward the "+ monster.getName()+"! ");
+        System.out.println(" The attack does 30 damage.");
+        monster.takeDamage(30);
     }
 
     public void taunt(){

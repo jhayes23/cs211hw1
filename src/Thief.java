@@ -1,11 +1,13 @@
 public class Thief extends Player{
     public Thief(String name) {
-        super(name, "Thief");
+        super(name, CLASSES.THIEF);
     }
 
     @Override
-    public void attack() {
-        System.out.println(getName() + " stabbed the enemy from behind.");
+    public void attack(Monster monster) {
+        System.out.print(getName() + " stabbed the " + monster.getName()+" from behind! ");
+        System.out.println("The attack does 30 damage.");
+        monster.takeDamage(30);
     }
 
     public void sneak() {
